@@ -1,3 +1,4 @@
+@item_details
 Feature: eBay item details
 
   Scenario: Open first search result and validate details and shipping popup

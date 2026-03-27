@@ -1,3 +1,4 @@
+@cart
 Feature: eBay add to cart
 
   Scenario: Add two items to cart and validate quantity and price

@@ -33,5 +33,6 @@ Generate reports:
 
 ## Notes
 - Chrome must be installed.
+- The sporadic human verification is not automated(should be bypassed manually).
 - Selenium Manager handles ChromeDriver automatically.
 - eBay UI/content can change, so selectors and strict content checks (especially shipping destination) may need small updates over time.

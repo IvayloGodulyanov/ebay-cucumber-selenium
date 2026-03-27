@@ -1,3 +1,4 @@
+@search_item
 Feature: eBay search
 
   Scenario: Search Monopoly in Toys & Hobbies and validate first result
