@@ -7,14 +7,22 @@ This project implements the requested BDD scenario with:
 - Selenium WebDriver
 - Chrome
 
-## Scenario Covered
+## E2E Scenario Covered
 - Open `https://ebay.com/`
-- Verify page is opened correctly
-- Select category `Toys & Hobbies`
-- Search for `Monopoly`
+- Search for `Monopoly` in category `Toys & Hobbies`
 - Verify first result title contains `Monopoly Board Game`
-- Verify shipping contains `Bulgaria`
+- Verify first result shipping contains `Free International Shipping`
 - Verify first result has a price
+- Open first result item details page
+- Verify details page title contains `Monopoly`
+- Verify details page item price matches search result price
+- Open `Shipping, returns, and payments` popup
+- Verify item can be shipped to `Bulgaria`
+- Select quantity `2`
+- Add item to cart
+- Verify user is on `https://cart.payments.ebay.com/`
+- Verify cart quantity is `2`
+- Verify price is displayed for `2` items
 
 ## Run from CLI
 
