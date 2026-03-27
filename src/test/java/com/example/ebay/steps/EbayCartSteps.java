@@ -3,7 +3,6 @@ package com.example.ebay.steps;
 import static org.assertj.core.api.BDDAssertions.within;
 
 import com.example.ebay.hooks.DriverContext;
-import com.example.ebay.hooks.SoftAssertionsContext;
 import com.example.ebay.pages.EbayCartPage;
 import com.example.ebay.state.ScenarioState;
 import io.cucumber.java.en.And;
@@ -16,7 +15,7 @@ public class EbayCartSteps {
     private final ScenarioState scenarioState;
     private EbayCartPage ebayCartPage;
     private SoftAssertions softly() {
-        return SoftAssertionsContext.get();
+        return scenarioState.getSoftly();
     }
 
     public EbayCartSteps(ScenarioState scenarioState) {

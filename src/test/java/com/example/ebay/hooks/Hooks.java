@@ -2,6 +2,7 @@ package com.example.ebay.hooks;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import com.example.ebay.state.ScenarioState;
 import org.assertj.core.api.SoftAssertions;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -11,9 +12,15 @@ import java.time.Duration;
 
 public class Hooks {
 
+    private final ScenarioState scenarioState;
+
+    public Hooks(ScenarioState scenarioState) {
+        this.scenarioState = scenarioState;
+    }
+
     @Before
     public void setUp() {
-        SoftAssertionsContext.set(new SoftAssertions());
+        scenarioState.setSoftly(new SoftAssertions());
 
         ChromeOptions options = new ChromeOptions();
         if (Boolean.parseBoolean(System.getProperty("headless", "false"))) {
@@ -31,7 +38,7 @@ public class Hooks {
     @After
     public void tearDown() {
         try {
-            SoftAssertions softly = SoftAssertionsContext.get();
+            SoftAssertions softly = scenarioState.getSoftly();
             if (softly != null) {
                 softly.assertAll();
             }
@@ -41,7 +48,8 @@ public class Hooks {
                 driver.quit();
             }
             DriverContext.clear();
-            SoftAssertionsContext.clear();
+            scenarioState.setSoftly(null);
+            scenarioState.setFirstPagePrice(null);
         }
     }
 }

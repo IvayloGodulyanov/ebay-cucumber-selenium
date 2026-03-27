@@ -1,7 +1,6 @@
 package com.example.ebay.steps;
 
 import com.example.ebay.hooks.DriverContext;
-import com.example.ebay.hooks.SoftAssertionsContext;
 import com.example.ebay.pages.EbayItemDetailsPage;
 import com.example.ebay.state.ScenarioState;
 import io.cucumber.java.en.And;
@@ -12,7 +11,7 @@ public class EbayItemDetailsSteps {
     private final ScenarioState scenarioState;
     private EbayItemDetailsPage ebayItemDetailsPage;
     private SoftAssertions softly() {
-        return SoftAssertionsContext.get();
+        return scenarioState.getSoftly();
     }
 
     public EbayItemDetailsSteps(ScenarioState scenarioState) {
