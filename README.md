@@ -38,6 +38,7 @@ Generate reports:
 - Import as **Gradle Project**
 - Use JDK 21
 - Run test class: `com.example.ebay.runner.RunCucumberTest`
+- For Eclipse set 'Run Configurations'
 
 ## Notes
 - Chrome must be installed.
